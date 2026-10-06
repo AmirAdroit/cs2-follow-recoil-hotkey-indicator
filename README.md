@@ -5,7 +5,7 @@ A small collection of CS2 settings: an N-key follow-recoil toggle with a color i
 ## Files
 
 - `follow-recoil.cfg`: the supplied console commands, preserved exactly.
-- `crosshairs.txt`: saved crosshair codes with player labels. The `#donk` label and code were supplied by the repository owner; attribution and import validity have not been independently verified.
+- `crosshairs.txt`: the supplied Donk crosshair code under `#donk`.
 - `AGENTS.md`: maintenance instructions.
 
 ## Load the config
@@ -37,6 +37,8 @@ Open `crosshairs.txt` and copy the code beneath the desired `#player` label. Pas
 
 The files are plain text. No build, dependencies, environment variables, server, credentials, or game automation are required.
 
-The supplied snippet is preserved verbatim, including `cl_crosshaircolor_a`. It has not been tested in a running CS2 client. Check the console for unknown commands and test both N-key states in practice before relying on the indicator. Changing follow recoil or RGB values separately can desynchronize the state and color; rerun `exec follow-recoil` to reset the supplied values.
+The supplied snippet is preserved verbatim, including `cl_crosshaircolor_a`. The [CS2 game-variable dump](https://github.com/SteamTracking/GameTracking-CS2/blob/master/DumpSource2/convars.txt), checked October 6, 2026, lists `cl_crosshairalpha` and has no `cl_crosshaircolor_a` entry. If the console rejects the supplied alpha line, use `cl_crosshairalpha 255` instead. Select a custom crosshair color in game settings if RGB changes do not show.
+
+These files have not been tested in a running CS2 client. Check console errors, both N-key states and colors, and crosshair import in practice. Changing follow recoil or RGB values separately can desynchronize the state and color; rerun `exec follow-recoil` to reset the supplied values.
 
 Maintain this repository with `git diff --check` and an in-game smoke check after command changes. Keep a copy of your personal settings for rollback; Git stores this repository's files, not your live game configuration.
